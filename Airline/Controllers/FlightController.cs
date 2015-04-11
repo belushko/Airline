@@ -130,7 +130,7 @@ namespace Airline.Controllers
             flightView.ArrivalDate = flight.ArrivalDate;
             flightView.DepatureDate = flight.DepatureDate;
             flightView.FlightId = flight.FlightId;
-            
+
 
             return View(flightView);
         }
@@ -155,6 +155,7 @@ namespace Airline.Controllers
                 FlightStatus status = flightStatusLogic.GetFlightStatusById(statusId);
                 flight.Status = status;
                 logic.Edit(flight);
+                //
 
                 return RedirectToAction("Index");
             }
