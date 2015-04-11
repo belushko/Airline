@@ -18,6 +18,7 @@ namespace Airline.Controllers
 
         public ActionResult Index()
         {
+            //new
             return View(logic.GetFlights());
         }
 
