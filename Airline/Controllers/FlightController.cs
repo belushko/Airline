@@ -1,4 +1,5 @@
-﻿using Business.Logic;
+﻿using Airline.Models;
+using Business.Logic;
 using DAL;
 using DAL.Entity;
 using System;
@@ -12,13 +13,25 @@ namespace Airline.Controllers
     public class FlightController : Controller
     {
         FlightLogic logic = new FlightLogic();
-
+        FlightStatusLogic flightStatusLogic = new FlightStatusLogic();
         //
         // GET: /Flight/
 
+        public List<SelectListItem> GetStatusList()
+        {
+            List<SelectListItem> list = flightStatusLogic.GetFlightStatuses().Select(x =>
+                new SelectListItem()
+                {
+                    Text = x.Name,
+                    Value = x.FlightStatusId.ToString()
+                }
+                ).ToList();
+            return list;
+        }
+
         public ActionResult Index()
         {
-            //new
+
             return View(logic.GetFlights());
         }
 
@@ -27,17 +40,48 @@ namespace Airline.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            FlightView flight = new FlightView();
+
+
+            List<SelectListItem> list = flightStatusLogic.GetFlightStatuses().Select(x =>
+                new SelectListItem()
+                {
+                    Text = x.Name,
+                    Value = x.FlightStatusId.ToString()
+                }
+                ).ToList();
+            flight.StatusList = list;
+
+            //easy
+            flight.From = "Харьков";
+            flight.To = "Москва";
+            flight.Name = "Имя";
+            flight.ArrivalDate = DateTime.Now;
+            flight.DepatureDate = DateTime.Now;
+
+            return View(flight);
         }
 
         //
         // POST: /Flight/Create
 
         [HttpPost]
-        public ActionResult Create(Flight flight)
+        public ActionResult Create(FlightView flightView)
         {
             try
             {
+                Flight flight = new Flight();
+                flight.FlightId = flightView.FlightId;
+                flight.From = flightView.From;
+                flight.To = flightView.To;
+                flight.Name = flightView.Name;
+                flight.ArrivalDate = flightView.ArrivalDate;
+                flight.DepatureDate = flightView.DepatureDate;
+
+                int statusId = int.Parse(flightView.StatusId);
+                FlightStatus status = flightStatusLogic.GetFlightStatusById(statusId);
+                flight.Status = status;
+
                 // TODO: Add insert logic here
                 logic.Create(flight);
 
@@ -55,8 +99,15 @@ namespace Airline.Controllers
 
         public ActionResult Delete(int id)
         {
+            return View(logic.GetFlightById(id));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection form)
+        {
+
             logic.Delete(id);
-            return View();
+            return RedirectToAction("Index");
         }
 
 
@@ -68,18 +119,42 @@ namespace Airline.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            Flight flight = logic.GetFlightById(id);
+            FlightView flightView = new FlightView();
+
+            //mapping       -> automapping
+            flightView.StatusList = GetStatusList();
+            flightView.From = flight.From;
+            flightView.To = flight.To;
+            flightView.Name = flight.Name;
+            flightView.ArrivalDate = flight.ArrivalDate;
+            flightView.DepatureDate = flight.DepatureDate;
+            flightView.FlightId = flight.FlightId;
+            
+
+            return View(flightView);
         }
 
         //
         // POST: /Flight/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(FlightView flightView, FormCollection collection)
         {
             try
             {
-                // TODO: Add update logic here
+                Flight flight = new Flight();
+                flight.FlightId = flightView.FlightId;
+                flight.From = flightView.From;
+                flight.To = flightView.To;
+                flight.Name = flightView.Name;
+                flight.ArrivalDate = flightView.ArrivalDate;
+                flight.DepatureDate = flightView.DepatureDate;
+
+                int statusId = int.Parse(flightView.StatusId);
+                FlightStatus status = flightStatusLogic.GetFlightStatusById(statusId);
+                flight.Status = status;
+                logic.Edit(flight);
 
                 return RedirectToAction("Index");
             }

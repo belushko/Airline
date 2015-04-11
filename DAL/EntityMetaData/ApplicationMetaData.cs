@@ -1,26 +1,32 @@
-﻿using DAL.EntityMetaData;
+﻿using DAL.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Entity
+namespace DAL.EntityMetaData
 {
-    [MetadataType(typeof(ApplicationMetaData))]
-    [Table("Application")]
-    public class Application
+    public class ApplicationMetaData
     {
+        [Key]
         public int ApplicationId { get; set; }
+
+        [Required]
+        [StringLength(200)]
         public string Text { get; set; }
 
+        [Required]
         public ApplicationStatus Status { get; set; }
 
+        [Required]
         public User Author { get; set; }
-        //public User ToWhom { get; set; }
-        public Flight Flight { get; set; }
 
+        //[Required]
+        //public User ToWhom { get; set; }
+
+        [Required]
+        public Flight Flight { get; set; }
     }
 }

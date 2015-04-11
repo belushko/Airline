@@ -26,6 +26,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ArrivalDate)
         </th>
+        <th>
+            STATUS
+        </th>
         <th></th>
     </tr>
 
@@ -45,6 +48,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ArrivalDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.FlightId }) |

@@ -44,5 +44,42 @@ namespace DAL
             db.Flight.Remove(flight);
             db.SaveChanges();
         }
+
+        
+        /// <summary>
+        /// FlightStatus REPOSITORY
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+        public List<FlightStatus> GetFlightStatuses()
+        {
+            return db.FlightStatus.ToList();
+        }
+
+        public FlightStatus GetFlightStatusById(int flightStatusId)
+        {
+            return db.FlightStatus.FirstOrDefault(f => f.FlightStatusId == flightStatusId);
+        }
+
+        public void EditFlightStatus(FlightStatus flightStatus)
+        {
+            db.Entry(flightStatus).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void AddFlightStatus(FlightStatus flightStatus)
+        {
+            db.FlightStatus.Add(flightStatus);
+            db.SaveChanges();
+        }
+
+        public void DeleteFlightStatus(FlightStatus flightStatus)
+        {
+            db.FlightStatus.Remove(flightStatus);
+            db.SaveChanges();
+        }
+
+        
     }
 }
