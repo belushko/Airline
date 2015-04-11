@@ -1,0 +1,9 @@
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\bin\Debug\Business.dll
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\bin\Debug\Business.pdb
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\bin\Debug\DAL.dll
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\bin\Debug\EntityFramework.dll
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\bin\Debug\DAL.pdb
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\bin\Debug\EntityFramework.xml
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\obj\Debug\Business.dll
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\Business\obj\Debug\Business.pdb

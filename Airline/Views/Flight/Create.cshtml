@@ -1,0 +1,68 @@
+﻿@model DAL.Entity.Flight
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Flight</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.From)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.From)
+            @Html.ValidationMessageFor(model => model.From)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.To)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.To)
+            @Html.ValidationMessageFor(model => model.To)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepatureDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DepatureDate)
+            @Html.ValidationMessageFor(model => model.DepatureDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ArrivalDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ArrivalDate)
+            @Html.ValidationMessageFor(model => model.ArrivalDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

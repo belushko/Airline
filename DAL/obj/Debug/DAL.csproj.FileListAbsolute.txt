@@ -1,0 +1,10 @@
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\bin\Debug\DAL.dll.config
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\bin\Debug\DAL.dll
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\bin\Debug\DAL.pdb
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\bin\Debug\EntityFramework.dll
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\bin\Debug\EntityFramework.xml
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\obj\Debug\DAL.dll
+c:\Users\Евгений\documents\visual studio 2013\Projects\Airline\DAL\obj\Debug\DAL.pdb
