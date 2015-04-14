@@ -45,7 +45,7 @@ namespace DAL
             db.SaveChanges();
         }
 
-        
+
         /// <summary>
         /// FlightStatus REPOSITORY
         /// </summary>
@@ -80,6 +80,55 @@ namespace DAL
             db.SaveChanges();
         }
 
-        
+
+        /// <summary>
+        /// Employee REPOSITORY
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+        public List<Employee> GetEmployees()
+        {
+            return db.Employee.ToList();
+        }
+
+        public Employee GetEmployeeById(int employeeId)
+        {
+            return db.Employee.FirstOrDefault(e => e.EmployeeId == employeeId);
+        }
+
+        public void EditEmployee(Employee employee)
+        {
+            db.Entry(employee).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void AddEmployee(Employee employee)
+        {
+            db.Employee.Add(employee);
+            db.SaveChanges();
+        }
+
+        public void DeleteEmployee(Employee employee)
+        {
+            db.Employee.Remove(employee);
+            db.SaveChanges();
+        }
+
+        /// <summary>
+        /// EmployeeType REPOSITORY
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+        public List<EmployeeType> GetEmployeeTypes()
+        {
+            return db.EmployeeType.ToList();
+        }
+
+        public EmployeeType GetEmployeeTypeById(int employeeTypeId)
+        {
+            return db.EmployeeType.FirstOrDefault(e => e.EmployeeTypeId == employeeTypeId);
+        }
     }
 }

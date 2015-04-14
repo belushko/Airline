@@ -12,7 +12,7 @@ namespace DAL.Entity
     [Table("FlightEmployee")]
     public class FlightEmployee
     {
-        public Flight Flight { get; set; }
-        public Employee Employee { get; set; }
+        public virtual Flight Flight { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

@@ -3,30 +3,23 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
-namespace DAL.EntityMetaData
+namespace Airline.Models
 {
-
-    class EmployeeMetaData
+    public class EmployeeView
     {
-        [Key]
         public int EmployeeId { get; set; }
-
-        [Required]
-        [StringLength(15)]
         public string FirstName { get; set; }
-
-        [Required]
-        [StringLength(15)]
         public string LastName { get; set; }
-
+        public int Age { get; set; }
         [Required]
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
-
         [Required]
+        public string TypeId { get; set; }
         public EmployeeType Type { get; set; }
+        public List<SelectListItem> TypeList { get; set; }
     }
 }

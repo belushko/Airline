@@ -16,7 +16,7 @@ namespace DAL.Entity
         public int EmployeeId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Age { get; set; }
-        public EmployeeType Type { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public virtual EmployeeType Type { get; set; }
     }
 }

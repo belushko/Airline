@@ -71,6 +71,10 @@ namespace Airline.Controllers
             try
             {
                 Flight flight = new Flight();
+                int statusId = int.Parse(flightView.StatusId);
+                FlightStatus status = flightStatusLogic.GetFlightStatusById(statusId);
+
+                flight.Status = status;
                 flight.FlightId = flightView.FlightId;
                 flight.From = flightView.From;
                 flight.To = flightView.To;
@@ -78,9 +82,7 @@ namespace Airline.Controllers
                 flight.ArrivalDate = flightView.ArrivalDate;
                 flight.DepatureDate = flightView.DepatureDate;
 
-                int statusId = int.Parse(flightView.StatusId);
-                FlightStatus status = flightStatusLogic.GetFlightStatusById(statusId);
-                flight.Status = status;
+
 
                 // TODO: Add insert logic here
                 logic.Create(flight);
@@ -97,16 +99,16 @@ namespace Airline.Controllers
         //
         // GET: /Flight/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int FlightId)
         {
-            return View(logic.GetFlightById(id));
+            return View(logic.GetFlightById(FlightId));
         }
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection form)
+        public ActionResult Delete(int flightId, FormCollection form)
         {
 
-            logic.Delete(id);
+            logic.Delete(flightId);
             return RedirectToAction("Index");
         }
 
@@ -172,7 +174,8 @@ namespace Airline.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            Flight flight = logic.GetFlightById(id);
+            return View(flight);
         }
 
     }

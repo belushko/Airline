@@ -16,11 +16,11 @@ namespace DAL.Entity
         public int ApplicationId { get; set; }
         public string Text { get; set; }
 
-        public ApplicationStatus Status { get; set; }
+        public virtual ApplicationStatus Status { get; set; }
 
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
         //public User ToWhom { get; set; }
-        public Flight Flight { get; set; }
+        public virtual Flight Flight { get; set; }
 
     }
 }

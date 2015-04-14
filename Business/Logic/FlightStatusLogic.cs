@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace Business.Logic
 {
-    public class FlightStatusLogic
+    public class FlightStatusLogic : AirlineLogic
     {
-        private Repository r = new Repository();
-
         public IEnumerable<FlightStatus> GetFlightStatuses()
         {
             return r.GetFlightStatuses();

@@ -16,12 +16,8 @@ namespace DAL.Entity
         public string From { get; set; }
         public string To { get; set; }
         public string Name { get; set; }
-
         public DateTime DepatureDate { get; set; }
         public DateTime ArrivalDate { get; set; }
-
-
-        //
-        public FlightStatus Status { get; set; }
+        public virtual FlightStatus Status { get; set; }
     }
 }
