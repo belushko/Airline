@@ -42,7 +42,6 @@ namespace Airline.Controllers
         {
             FlightView flight = new FlightView();
 
-
             List<SelectListItem> list = flightStatusLogic.GetFlightStatuses().Select(x =>
                 new SelectListItem()
                 {
