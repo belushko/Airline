@@ -10,6 +10,12 @@ namespace DAL
 {
     public class AirlineContext : DbContext
     {
+        //public AirlineContext()
+        //    : base("AirlineContext")
+        //{
+
+        //}
+
         public DbSet<Flight> Flight { get; set; }
         public DbSet<Application> Application { get; set; }
         public DbSet<ApplicationStatus> ApplicationStatus { get; set; }

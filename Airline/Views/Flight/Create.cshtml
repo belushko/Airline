@@ -1,4 +1,4 @@
-﻿@model DAL.Entity.Flight
+﻿@model Airline.Models.FlightView
 
 @{
     ViewBag.Title = "Create";
@@ -11,7 +11,13 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Flight</legend>
+        <legend>FlightView</legend>
+
+
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.FlightId)
+            @Html.ValidationMessageFor(model => model.FlightId)
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.From)
@@ -51,6 +57,14 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.ArrivalDate)
             @Html.ValidationMessageFor(model => model.ArrivalDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StatusId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.StatusId, Model.StatusList as List<SelectListItem>)
+            @Html.ValidationMessageFor(model => model.StatusId)
         </div>
 
         <p>

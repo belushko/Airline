@@ -39,7 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\AirlineLogic.cs" />
+    <Compile Include="Logic\EmployeeLogic.cs" />
+    <Compile Include="Logic\EmployeeTypeLogic.cs" />
     <Compile Include="Logic\FlightLogic.cs" />
+    <Compile Include="Logic\FlightStatusLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

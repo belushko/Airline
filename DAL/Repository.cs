@@ -44,5 +44,91 @@ namespace DAL
             db.Flight.Remove(flight);
             db.SaveChanges();
         }
+
+
+        /// <summary>
+        /// FlightStatus REPOSITORY
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+        public List<FlightStatus> GetFlightStatuses()
+        {
+            return db.FlightStatus.ToList();
+        }
+
+        public FlightStatus GetFlightStatusById(int flightStatusId)
+        {
+            return db.FlightStatus.FirstOrDefault(f => f.FlightStatusId == flightStatusId);
+        }
+
+        public void EditFlightStatus(FlightStatus flightStatus)
+        {
+            db.Entry(flightStatus).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void AddFlightStatus(FlightStatus flightStatus)
+        {
+            db.FlightStatus.Add(flightStatus);
+            db.SaveChanges();
+        }
+
+        public void DeleteFlightStatus(FlightStatus flightStatus)
+        {
+            db.FlightStatus.Remove(flightStatus);
+            db.SaveChanges();
+        }
+
+
+        /// <summary>
+        /// Employee REPOSITORY
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+        public List<Employee> GetEmployees()
+        {
+            return db.Employee.ToList();
+        }
+
+        public Employee GetEmployeeById(int employeeId)
+        {
+            return db.Employee.FirstOrDefault(e => e.EmployeeId == employeeId);
+        }
+
+        public void EditEmployee(Employee employee)
+        {
+            db.Entry(employee).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void AddEmployee(Employee employee)
+        {
+            db.Employee.Add(employee);
+            db.SaveChanges();
+        }
+
+        public void DeleteEmployee(Employee employee)
+        {
+            db.Employee.Remove(employee);
+            db.SaveChanges();
+        }
+
+        /// <summary>
+        /// EmployeeType REPOSITORY
+        /// </summary>
+        /// <returns></returns>
+        /// 
+
+        public List<EmployeeType> GetEmployeeTypes()
+        {
+            return db.EmployeeType.ToList();
+        }
+
+        public EmployeeType GetEmployeeTypeById(int employeeTypeId)
+        {
+            return db.EmployeeType.FirstOrDefault(e => e.EmployeeTypeId == employeeTypeId);
+        }
     }
 }

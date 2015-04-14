@@ -1,0 +1,50 @@
+﻿@model DAL.Entity.Flight
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Flight</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.From)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.From)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.To)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.To)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DepatureDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DepatureDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ArrivalDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ArrivalDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FlightId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

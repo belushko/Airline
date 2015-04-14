@@ -47,6 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AirlineContext.cs" />
+    <Compile Include="EntityMetaData\ApplicationMetaData.cs" />
+    <Compile Include="EntityMetaData\ApplicationStatusMetaData.cs" />
+    <Compile Include="EntityMetaData\EmployeeMetaData.cs" />
+    <Compile Include="EntityMetaData\EmployeeTypeMetaData.cs" />
+    <Compile Include="EntityMetaData\FlightEmployeeMetaData.cs" />
+    <Compile Include="EntityMetaData\FlightMetaData.cs" />
+    <Compile Include="EntityMetaData\FlightStatusMetaData.cs" />
+    <Compile Include="EntityMetaData\UserMetaData.cs" />
     <Compile Include="Entity\Application.cs" />
     <Compile Include="Entity\ApplicationStatus.cs" />
     <Compile Include="Entity\Employee.cs" />
@@ -58,9 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EntityMetaData\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
